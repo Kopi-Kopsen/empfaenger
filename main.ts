@@ -1,6 +1,3 @@
-input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    radio.sendString("F")
-})
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "F") {
         if (Forwärts == 0) {
@@ -51,5 +48,5 @@ radio.onReceivedString(function (receivedString) {
 })
 let Kurvenstärke = 0
 let Forwärts = 0
-radio.setGroup(2)
+radio.setGroup(10)
 radio.setTransmitPower(7)
