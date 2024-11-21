@@ -10,6 +10,8 @@ radio.onReceivedString(function (receivedString) {
             basic.showIcon(IconNames.Heart)
         } else if (Forwärts == 1) {
             Forwärts = 0
+            // Fahrzeug stoppt
+            MotionKit.stop()
             basic.clearScreen()
         }
     } else if (receivedString == "B") {
@@ -18,20 +20,25 @@ radio.onReceivedString(function (receivedString) {
     } else if (receivedString == "L") {
         if (Kurvenstärke == 1) {
             // Fahrzeug dreht nach links mit Geschwindigkeit 50
-            MotionKit.turnLeft(50)
+            MotionKit.turnLeft(20)
         } else if (Kurvenstärke == 2) {
             // Fahrzeug dreht nach links mit Geschwindigkeit 50
             MotionKit.turnLeft(50)
         } else if (Kurvenstärke == 3) {
             // Fahrzeug dreht nach links mit Geschwindigkeit 50
-            MotionKit.turnLeft(50)
+            MotionKit.turnLeft(70)
         }
     } else if (receivedString == "R") {
-        // Fahrzeug dreht nach rechts mit Geschwindigkeit 50
-        MotionKit.turnRight(50)
-    } else if (receivedString == "S") {
-        // Fahrzeug stoppt
-        MotionKit.stop()
+        if (Kurvenstärke == 1) {
+            // Fahrzeug dreht nach rechts mit Geschwindigkeit 50
+            MotionKit.turnRight(20)
+        } else if (Kurvenstärke == 2) {
+            // Fahrzeug dreht nach rechts mit Geschwindigkeit 50
+            MotionKit.turnRight(50)
+        } else if (Kurvenstärke == 3) {
+            // Fahrzeug dreht nach rechts mit Geschwindigkeit 50
+            MotionKit.turnRight(70)
+        }
     } else if (receivedString == "K") {
         if (Kurvenstärke == 1) {
             Kurvenstärke = 1
