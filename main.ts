@@ -1,15 +1,14 @@
 radio.onReceivedString(function (receivedString) {
+    basic.showString(receivedString)
     if (receivedString == "F") {
         if (Forwärts == 0) {
             Forwärts += 1
             // Fahrzeug fährt vorwärts mit Geschwindigkeit 100
             MotionKit.forward()
-            basic.showIcon(IconNames.Heart)
         } else if (Forwärts == 1) {
             Forwärts = 0
             // Fahrzeug stoppt
             MotionKit.stop()
-            basic.clearScreen()
         }
     } else if (receivedString == "B") {
         // Fahrzeug fährt rückwärts mit Geschwindigkeit 100
